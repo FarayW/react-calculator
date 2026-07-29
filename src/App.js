@@ -16,7 +16,7 @@ function App() {
 
         const currentNumber = parseFloat(display);
         const newPrevValue = operator != null
-            ? calculate(prevValue, currentNumber, op) : currentNumber;
+            ? calculate(prevValue, currentNumber, operator) : currentNumber;
 
         setPrevValue(newPrevValue);
         setOperator(op);
@@ -36,7 +36,7 @@ function App() {
     function setResult() {
         if (operator === null || display === '') return;
         const result = calculate(prevValue, parseFloat(display), operator);
-        setDisplay(result);
+        setDisplay(String(result));
         setPrevValue(null);
         setOperator(null);
     }
