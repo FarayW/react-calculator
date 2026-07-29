@@ -21,13 +21,13 @@
 ## Установка и запуск
 
 ```bash
-git clone <ссылка-на-репозиторий>
-cd <папка-проекта>
+git clone https://github.com/FarayW/react-calculator.git
+cd react-calculator
 npm install
 npm start
 ```
 
-Приложение откроется на [http://localhost:3000](http://localhost:3000).
+Приложение откроется на http://localhost:3000
 
 ## Структура проекта
 
@@ -37,6 +37,8 @@ src/
 │   └── numberButton.jsx   # Кнопка цифры, переиспользуемый компонент
 ├── styles/
 │   └── calculator.css     # Стили калькулятора
+├── public/
+│   └── index.html
 ├── App.jsx                # Основная логика и разметка
 └── index.js
 ```
