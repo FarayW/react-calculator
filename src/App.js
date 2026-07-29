@@ -13,9 +13,14 @@ function App() {
 
     function chooseOperator(op) {
         if (display === '') return; // нечего фиксировать
+
         setPrevValue(parseFloat(display));
         setOperator(op);
         setDisplay('');
+
+        if (operator != null) {
+            setPrevValue(getResult());
+        }
     }
 
     function getResult() {
@@ -39,7 +44,12 @@ function App() {
             default:
                 return;
         }
-        setDisplay(String(result));
+        return result;
+    }
+
+    function setResult() {
+        if (operator === null || display === '') return;
+        setDisplay(String(getResult()));
         setPrevValue(null);
         setOperator(null);
     }
@@ -59,7 +69,7 @@ function App() {
                         onClick={() => setDisplay(prev => prev.slice(0, -1))}>Del
                 </button>
                 <button className="btn" id="clear-btn" onClick={clear}>C</button>
-                <button className="btn" id="result-btn" onClick={getResult}>=</button>
+                <button className="btn" id="result-btn" onClick={setResult}>=</button>
             </div>
             <div className="btns-row">
                 <NumberButton setInputState={addNumber} num={'1'}/>
