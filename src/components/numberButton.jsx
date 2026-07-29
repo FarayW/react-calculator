@@ -1,15 +1,11 @@
 import React from 'react';
 
-const NumberButton = ({setInputState, num}) => {
-    function addNumber(num) {
-        setInputState(prev => prev + num);
-    }
-
+const NumberButton = ({ setInputState, num }) => {
     return (
         <button
             className="btn number-btn"
             id={"btn" + num}
-            onClick={() => addNumber(num)}>
+            onClick={() => setInputState(num)}>
             {num}
         </button>
     );
