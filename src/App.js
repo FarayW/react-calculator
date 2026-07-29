@@ -21,25 +21,25 @@ function App() {
                 <button className="btn" id="result-btn">=</button>
             </div>
             <div className="btns-row">
-                <NumberButton setInputState={setInputState} inputState={inputState} num={'1'}/>
-                <NumberButton setInputState={setInputState} inputState={inputState} num={'2'}/>
-                <NumberButton setInputState={setInputState} inputState={inputState} num={'3'}/>
+                <NumberButton setInputState={setInputState} num={'1'}/>
+                <NumberButton setInputState={setInputState} num={'2'}/>
+                <NumberButton setInputState={setInputState} num={'3'}/>
                 <button className="btn action-btn" id="btn-plus">+</button>
             </div>
             <div className="btns-row">
-                <NumberButton setInputState={setInputState} inputState={inputState} num={'4'}/>
-                <NumberButton setInputState={setInputState} inputState={inputState} num={'5'}/>
-                <NumberButton setInputState={setInputState} inputState={inputState} num={'6'}/>
+                <NumberButton setInputState={setInputState} num={'4'}/>
+                <NumberButton setInputState={setInputState} num={'5'}/>
+                <NumberButton setInputState={setInputState} num={'6'}/>
                 <button className="btn action-btn" id="btn-minus">-</button>
             </div>
             <div className="btns-row">
-                <NumberButton setInputState={setInputState} inputState={inputState} num={'7'}/>
-                <NumberButton setInputState={setInputState} inputState={inputState} num={'8'}/>
-                <NumberButton setInputState={setInputState} inputState={inputState} num={'9'}/>
+                <NumberButton setInputState={setInputState} num={'7'}/>
+                <NumberButton setInputState={setInputState} num={'8'}/>
+                <NumberButton setInputState={setInputState} num={'9'}/>
                 <button className="btn action-btn" id="btn-divide">/</button>
             </div>
             <div className="btns-row">
-                <NumberButton setInputState={setInputState} inputState={inputState} num={'0'}/>
+                <NumberButton setInputState={setInputState} num={'0'}/>
                 <button className="btn action-btn" id="btn-multiply">*</button>
             </div>
         </div>
