@@ -14,42 +14,29 @@ function App() {
     function chooseOperator(op) {
         if (display === '') return; // нечего фиксировать
 
-        setPrevValue(parseFloat(display));
+        const currentNumber = parseFloat(display);
+        const newPrevValue = operator != null
+            ? calculate(prevValue, currentNumber, op) : currentNumber;
+
+        setPrevValue(newPrevValue);
         setOperator(op);
         setDisplay('');
-
-        if (operator != null) {
-            setPrevValue(getResult());
-        }
     }
 
-    function getResult() {
-        if (operator === null || display === '') return;
-        const a = prevValue;
-        const b = parseFloat(display);
-        let result;
-        switch (operator) {
-            case '+':
-                result = a + b;
-                break;
-            case '-':
-                result = a - b;
-                break;
-            case '*':
-                result = a * b;
-                break;
-            case '/':
-                result = a / b;
-                break;
-            default:
-                return;
+    function calculate(a, b, op) {
+        switch (op) {
+            case '+': return a + b;
+            case '-': return a - b;
+            case '*': return a * b;
+            case '/': return a / b;
+            default: return b;
         }
-        return result;
     }
 
     function setResult() {
         if (operator === null || display === '') return;
-        setDisplay(String(getResult()));
+        const result = calculate(prevValue, parseFloat(display), operator);
+        setDisplay(result);
         setPrevValue(null);
         setOperator(null);
     }
